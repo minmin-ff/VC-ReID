@@ -1,0 +1,17 @@
+{
+  "release": "VC-ReID minimal reproducibility package",
+  "included": [
+    "core training/retrieval/evaluation code",
+    "parsed Evidence-MARS metadata",
+    "audit and protocol indices",
+    "compact result records"
+  ],
+  "excluded": [
+    "raw benchmark media",
+    "model checkpoints",
+    "cached features",
+    "logs",
+    "raw model responses",
+    "annotation and question-generation prompts"
+  ]
+}

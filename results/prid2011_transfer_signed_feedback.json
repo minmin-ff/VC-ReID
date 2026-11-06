@@ -1,0 +1,90 @@
+{
+  "experiment": "MARS-trained TF-CLIP to PRID2011, no adaptation",
+  "protocol": "official TU Graz A-to-B: 200 queries, 749 gallery trajectories",
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "mAP": 80.8722972869873,
+        "Rank-1": 74.00000095367432,
+        "Rank-5": 87.99999952316284,
+        "Rank-10": 93.50000023841858,
+        "valid_queries": 200
+      }
+    },
+    {
+      "round": 1,
+      "alpha": 0.15,
+      "metrics": {
+        "mAP": 85.39440035820007,
+        "Rank-1": 81.00000023841858,
+        "Rank-5": 88.99999856948853,
+        "Rank-10": 94.9999988079071,
+        "valid_queries": 200
+      }
+    },
+    {
+      "round": 2,
+      "alpha": 0.12,
+      "metrics": {
+        "mAP": 87.41695880889893,
+        "Rank-1": 83.99999737739563,
+        "Rank-5": 91.99999570846558,
+        "Rank-10": 93.99999976158142,
+        "valid_queries": 200
+      }
+    },
+    {
+      "round": 3,
+      "alpha": 0.09600000000000002,
+      "metrics": {
+        "mAP": 90.1777982711792,
+        "Rank-1": 87.99999952316284,
+        "Rank-5": 93.00000071525574,
+        "Rank-10": 94.49999928474426,
+        "valid_queries": 200
+      }
+    },
+    {
+      "round": 4,
+      "alpha": 0.07680000000000002,
+      "metrics": {
+        "mAP": 92.18930006027222,
+        "Rank-1": 90.99999666213989,
+        "Rank-5": 93.00000071525574,
+        "Rank-10": 95.49999833106995,
+        "valid_queries": 200
+      }
+    }
+  ],
+  "Repair_rate": 65.38461538461539,
+  "Damage_rate": 0.0,
+  "Mean_rounds_to_success_initial_failures": 2.1764705181121826,
+  "Rank1_gain_per_fixed_click": 4.249998927116394,
+  "counts": {
+    "initially_wrong": 52,
+    "initially_correct": 148,
+    "repaired": 34,
+    "damaged": 0
+  },
+  "feature_cache": {
+    "num_query": 200,
+    "data_root": "<local-path>/multi_shot",
+    "checkpoint": "<local-path>/best_model.pth.tar",
+    "extraction_seconds": 159.6330014653504
+  },
+  "settings": {
+    "config_file": "configs/vit_clipreid.yml",
+    "dataset_root": "<local-path>/official",
+    "checkpoint": "<local-path>/best_model.pth.tar",
+    "feature_cache": "<local-path>/features_dense.pt",
+    "output": "<local-path>/signed_feedback.json",
+    "device": 0,
+    "seed": 3407,
+    "alpha": 0.15,
+    "decay": 0.8,
+    "rounds": 4,
+    "seq_len": 8,
+    "force_extract": false
+  }
+}

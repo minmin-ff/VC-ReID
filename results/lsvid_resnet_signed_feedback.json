@@ -1,0 +1,108 @@
+{
+  "experiment": "LSVID_supervised_global_action_bidirectional",
+  "protocol": {
+    "query": 3504,
+    "gallery": 7829,
+    "gallery_excludes_query": true,
+    "same_identity_same_camera_removed": true,
+    "training_on_lsvid_train_ids": true,
+    "query_or_gallery_used_for_training": false,
+    "static_branch": false,
+    "action_interval_source": "whole-tracklet missing-interval fallback",
+    "verification": "identity labels simulate Top-1 user confirmation"
+  },
+  "configuration": {
+    "dataset_root": "<local-path>/LS-VID",
+    "suite_root": "<local-path>/experiment_suite",
+    "resnet_checkpoint": "<local-path>/reid_resnet50_epoch120.pth",
+    "retriever_checkpoint": "<local-path>/retriever_best.pth",
+    "output_dir": "<local-path>/eval",
+    "device": 0,
+    "seed": 3407,
+    "alpha": 0.15,
+    "decay": 0.8,
+    "rounds": 4,
+    "chunk_tracklets": 128,
+    "frame_batch_size": 128,
+    "force_extract": false,
+    "extract_only": false
+  },
+  "feature_metadata": {
+    "num_query": 3504,
+    "dataset": "LS-VID",
+    "feature_view": "global_action",
+    "feature_dimension": 4096,
+    "global_sampler": "32-frame uniform",
+    "action_sampler": "16-frame adaptive bidirectional exponential",
+    "missing_interval_fallback": "whole tracklet",
+    "adaptive_base": "b_I=(L_I-1)^(1/7), no upper cap",
+    "resnet_checkpoint": "<local-path>/reid_resnet50_epoch120.pth",
+    "extraction_seconds": 1186.8959145843983
+  },
+  "interaction": {
+    "rounds": [
+      {
+        "round": 0,
+        "metrics": {
+          "mAP": 58.180660009384155,
+          "valid_queries": 3500,
+          "Rank-1": 69.80000138282776,
+          "Rank-5": 85.62856912612915,
+          "Rank-10": 89.99999761581421
+        }
+      },
+      {
+        "round": 1,
+        "alpha": 0.15,
+        "metrics": {
+          "mAP": 61.80683970451355,
+          "valid_queries": 3500,
+          "Rank-1": 76.82856917381287,
+          "Rank-5": 86.79999709129333,
+          "Rank-10": 90.88571071624756
+        }
+      },
+      {
+        "round": 2,
+        "alpha": 0.12,
+        "metrics": {
+          "mAP": 64.05888199806213,
+          "valid_queries": 3500,
+          "Rank-1": 80.68571090698242,
+          "Rank-5": 87.714284658432,
+          "Rank-10": 90.88571071624756
+        }
+      },
+      {
+        "round": 3,
+        "alpha": 0.09600000000000002,
+        "metrics": {
+          "mAP": 65.55762887001038,
+          "valid_queries": 3500,
+          "Rank-1": 83.05714130401611,
+          "Rank-5": 88.34285736083984,
+          "Rank-10": 91.1714255809784
+        }
+      },
+      {
+        "round": 4,
+        "alpha": 0.07680000000000002,
+        "metrics": {
+          "mAP": 66.75788164138794,
+          "valid_queries": 3500,
+          "Rank-1": 84.9142849445343,
+          "Rank-5": 88.80000114440918,
+          "Rank-10": 91.48571491241455
+        }
+      }
+    ],
+    "repair_rate": 50.047303689687794,
+    "damage_rate": 0.0,
+    "counts": {
+      "initially_wrong": 1057,
+      "initially_correct": 2443,
+      "repaired": 529,
+      "damaged": 0
+    }
+  }
+}
