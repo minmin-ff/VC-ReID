@@ -62,7 +62,7 @@ def load_models(
     needs_text_encoder: bool,
     requires_alignment: bool,
 ):
-    from retriever import load_retriever
+    from .retriever import load_retriever
 
     checkpoint = torch.load(checkpoint_path, map_location="cpu")
     if requires_alignment and not bool(checkpoint.get("clip_aligned", False)):

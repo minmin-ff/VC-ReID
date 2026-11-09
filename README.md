@@ -2,7 +2,7 @@
 
 Minimal reproducibility package for **verification-controlled interactive video person re-identification**.
 
-The repository contains the code required for feature construction, projection learning, official-protocol evaluation, signed query updates, verification-noise analysis, and the additional LS-VID/TF-CLIP/PRID2011 experiments. It also contains the parsed Evidence-MARS metadata and protocol indices used by the experiments.
+The repository contains the code required for feature construction, projection learning, official-protocol evaluation, signed query updates, verification-noise analysis, and the additional LS-VID/TF-CLIP/PRID2011 experiments. It also contains the parsed Evidence-MARS metadata and protocol indices used by the experiments. Prompt-dependent annotation and question-generation entry points are intentionally outside the release scope.
 
 ## Release scope
 
@@ -38,11 +38,11 @@ with gzip.open("data/evidence_mars/query.jsonl.gz", "rt", encoding="utf-8") as f
 
 ## Code layout
 
-- `vc_reid/`: MARS feature construction, projection learning, retrieval, reranking, metrics, and noise analysis.
+- `vc_reid/`: MARS feature construction, projection learning, retrieval, signed updates, reranking, metrics, and noise analysis.
 - `experiments/`: verification-only MARS, LS-VID, TF-CLIP, and PRID2011 entry points.
 - `results/`: compact machine-readable records corresponding to the manuscript tables.
 
-The language-question generation prompts are not part of this release. Verification-only experiments and the signed Rocchio-style update can be run independently of those prompts.
+The language-question generation prompts and raw model calls that depend on them are not part of this release. Verification-only experiments and the signed Rocchio-style update can be run independently of those prompts. The TF-CLIP entry points expect a separately obtained checkout of the official TF-CLIP implementation and its trained checkpoints.
 
 ## Environment
 

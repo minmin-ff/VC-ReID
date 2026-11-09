@@ -78,7 +78,7 @@ def embed_projection(
 ) -> torch.Tensor:
     paths = load_paths("configs/paths.json")
     add_parent_to_path(paths)
-    from retriever import ProjectionHead
+    from .retriever import ProjectionHead
 
     checkpoint = torch.load(checkpoint_path, map_location="cpu")
     expected_dim = VIEW_DIMS[view]

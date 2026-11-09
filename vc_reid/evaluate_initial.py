@@ -26,7 +26,7 @@ def main() -> None:
     args = parser.parse_args()
     paths = load_paths(args.config)
     add_parent_to_path(paths)
-    from retriever import ProjectionHead
+    from .retriever import ProjectionHead
 
     device = torch.device(
         f"cuda:{args.device}" if torch.cuda.is_available() else "cpu"

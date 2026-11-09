@@ -15,10 +15,10 @@ from pathlib import Path
 
 import torch
 
-from experiment_suite.src.common import add_parent_to_path, load_paths
-from experiment_suite.src.interactive_official import load_manifest
-from experiment_suite.src.rerank_official import encode_positive_qa, reconstruct_rounds
-from experiment_suite.src.retrieval_metrics import evaluate_with_details
+from .common import add_parent_to_path, load_paths
+from .interactive_official import load_manifest
+from .rerank_official import encode_positive_qa, reconstruct_rounds
+from .retrieval_metrics import evaluate_with_details
 
 
 def main() -> None:

@@ -226,7 +226,7 @@ def main() -> None:
 
     paths = load_paths(args.config)
     add_parent_to_path(paths)
-    from retriever import load_retriever
+    from .retriever import load_retriever
     from transformers import CLIPModel, CLIPTokenizer
 
     device = torch.device(f"cuda:{args.device}")

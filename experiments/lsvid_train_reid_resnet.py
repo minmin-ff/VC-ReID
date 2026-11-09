@@ -92,8 +92,8 @@ def main() -> None:
     args = parse_args()
     suite_root = Path(args.suite_root).resolve()
     sys.path.insert(0, str(suite_root))
-    from src.common import atomic_json_dump, set_seed
-    from src.train_reid_resnet import (
+    from vc_reid.common import atomic_json_dump, set_seed
+    from vc_reid.train_reid_resnet import (
         RandomIdentitySampler,
         ReIDResNet50,
         batch_hard_triplet,

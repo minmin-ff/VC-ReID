@@ -18,14 +18,14 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from experiment_suite.src.common import atomic_json_dump
-from experiment_suite.src.interactive_official import load_manifest
-from experiment_suite.src.rerank_official import (
+from .common import atomic_json_dump
+from .interactive_official import load_manifest
+from .rerank_official import (
     evaluate_distances,
     k_reciprocal_rerank,
     squared_euclidean,
 )
-from experiment_suite.src.retrieval_metrics import evaluate_with_details
+from .retrieval_metrics import evaluate_with_details
 
 
 def main() -> None:

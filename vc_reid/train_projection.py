@@ -117,7 +117,7 @@ class RandomIdentityBatchSampler(Sampler[List[int]]):
 def train(args: argparse.Namespace) -> Path:
     paths = load_paths(args.config)
     add_parent_to_path(paths)
-    from retriever import CenterLoss, CircleLoss, ProjectionHead, TripletLoss
+    from .retriever import CenterLoss, CircleLoss, ProjectionHead, TripletLoss
 
     set_seed(args.seed)
     feature_root = Path(args.feature_root) if args.feature_root else paths.train_features
