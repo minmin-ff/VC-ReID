@@ -48,18 +48,6 @@ The language-question generation prompts and raw model calls that depend on them
 
 The experiments were run with Python 3.10, PyTorch, torchvision, NumPy, SciPy, Pillow, tqdm, scikit-learn, and Hugging Face Transformers. Install versions compatible with the CUDA runtime available on the target machine.
 
-## Signed update
-
-For unit-normalized query and gallery embeddings, verification selects the update sign:
-
-```text
-confirm: q_(t+1) = normalize(q_t + alpha_t * g_1^t)
-reject:  q_(t+1) = normalize(q_t - alpha_t * g_1^t + 0.3 * alpha_t * p_t)
-alpha_t = alpha_0 * rho^t
-```
-
-The learned encoders and gallery embeddings remain fixed during interaction.
-
 ## Citation and data responsibility
 
 Please cite the corresponding manuscript and the original MARS, LS-VID, PRID2011, and TF-CLIP papers when using this release. The metadata does not grant rights to redistribute the original benchmark media.
